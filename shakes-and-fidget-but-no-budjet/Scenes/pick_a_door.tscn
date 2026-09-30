@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://8ovgy4rccy2x"]
+
+[ext_resource type="Texture2D" uid="uid://03txu58gfg3v" path="res://Graphics/Doors/Monster/Type_1/closed.png" id="1_qtnq2"]
+[ext_resource type="Script" uid="uid://bej8sau0q4en1" path="res://Scripts/pick_a_door.gd" id="1_u4lu7"]
+[ext_resource type="Texture2D" uid="uid://wq6p3absnm1t" path="res://Graphics/Doors/Monster/Type_1/hover.png" id="2_u4lu7"]
+
+[node name="pick_a_door" type="Control" unique_id=1076438304]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4lu7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1420778411]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9008343, 0.6130447, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=651090144]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 150
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 150
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1650112133]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 350
+
+[node name="door1" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=1418707882]
+layout_mode = 2
+texture_normal = ExtResource("1_qtnq2")
+texture_hover = ExtResource("2_u4lu7")
+
+[node name="door2" type="TextureButton" parent="MarginContainer/HBoxContainer" unique_id=529296383]
+layout_mode = 2
+texture_normal = ExtResource("1_qtnq2")
+texture_hover = ExtResource("2_u4lu7")
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/door1" to="." method="_on_door_1_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/door2" to="." method="_on_door_2_pressed"]
