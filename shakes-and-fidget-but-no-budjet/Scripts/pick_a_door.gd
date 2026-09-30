@@ -5,7 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#this is a test
+	#this is a test second time
 	print("New Doors Spawned")
 	var keys: Array = GlobalDoorPicker.door_types.keys()
 
