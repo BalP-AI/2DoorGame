@@ -44,10 +44,10 @@ func chooseEntityTypeAndInit(roomType : String) -> void:
 			add_child(mon)
 			init_Monster(mon)
 	pass
+
 	
 func init_Monster(entity : Monster) -> void:
-	entity.set_looks(load("res://Graphics/Monsters/monster_1.png")) #dynamic monster generation
-	entity.position = Vector2(500, 200)
+	entity.position = Vector2(500,500)
 	
 func _on_texture_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/pick_a_door.tscn")
