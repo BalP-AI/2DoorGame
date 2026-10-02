@@ -5,39 +5,57 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#this is a test second time
 	print("New Doors Spawned")
-	var keys: Array = GlobalDoorPicker.door_types.keys()
-
-	var door1_type: String = keys.pick_random()
-	var door2_type: String = keys.pick_random()
-
-	var door1: String = GlobalDoorPicker.door_types[door1_type].pick_random()
-	var door2: String = GlobalDoorPicker.door_types[door2_type].pick_random()
-
-	door_1.texture_normal = load("%sclosed.png" % door1)
-	door_1.texture_hover  = load("%shover.png"  % door1)
-	print("%sclosed.png / %shover.png" % [door1, door1])
-
-	door_2.texture_normal = load("%sclosed.png" % door2)
-	door_2.texture_hover  = load("%shover.png"  % door2)
-	print("%sclosed.png / %shover.png" % [door2, door2])
-
-
-	GlobalDoorPicker.door_1_type = door1_type
-	GlobalDoorPicker.door_2_type = door2_type
-	print("Global 1:" + GlobalDoorPicker.door_1_type)
-	print("Global 2:" + GlobalDoorPicker.door_2_type)
-
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+	_spawn_doors()
+	
+	
 func _process(delta: float) -> void:
 	pass
 	
+#=========== Helper Methods ==============#
+func _spawn_doors() -> void:
+	var door1_type: String
+	var door2_type: String
+	door1_type = _pick_door_type()
+	door2_type = _pick_door_type()
+
+	var door1_path: String = _pick_door_path(door1_type)
+	var door2_path: String = _pick_door_path(door2_type)
+
+	_apply_door_textures(door_1, door1_path)
+	_apply_door_textures(door_2, door2_path)
+
+	_save_door_types(door1_type, door2_type)
+	_debug_print_doors(door1_type, door2_type, door1_path, door2_path)
+
+func _pick_door_type() -> String:
+	return GlobalDoorPicker.door_types.keys().pick_random()
+
+func _pick_door_path(door_type: String) -> String:
+	return GlobalDoorPicker.door_types[door_type].pick_random()
+
+func _apply_door_textures(door: TextureButton, path: String) -> void:
+	door.texture_normal = load("%sclosed.png" % path)
+	door.texture_hover  = load("%shover.png"  % path)
+
+func _save_door_types(type1: String, type2: String) -> void:
+	GlobalDoorPicker.door_1_type = type1
+	GlobalDoorPicker.door_2_type = type2
+
+func _debug_print_doors(t1: String, t2: String, p1: String, p2: String) -> void:
+	print("%sclosed.png / %shover.png" % [p1, p1])
+	print("%sclosed.png / %shover.png" % [p2, p2])
+	print("Global 1:" + t1)
+	print("Global 2:" + t2)
 
 func _on_door_1_pressed() -> void:
+	GlobalDoorPicker.door_1_select = true
+	GlobalDoorPicker.door_2_select = false
+
 	get_tree().change_scene_to_file("res://Scenes/event.tscn")
+	
 func _on_door_2_pressed() -> void:
+	GlobalDoorPicker.door_1_select = false
+	GlobalDoorPicker.door_2_select = true
+	 
 	get_tree().change_scene_to_file("res://Scenes/event.tscn")

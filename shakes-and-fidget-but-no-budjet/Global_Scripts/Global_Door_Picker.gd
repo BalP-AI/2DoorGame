@@ -8,3 +8,12 @@ var door_types : Dictionary = {
 } 
 var door_1_type
 var door_2_type
+
+var door_1_select : bool 
+var door_2_select : bool 
+
+func getSelectedDoorType() -> String:
+	if GlobalDoorPicker.door_1_select :
+		return GlobalDoorPicker.door_1_type
+	else:
+		return GlobalDoorPicker.door_2_type
