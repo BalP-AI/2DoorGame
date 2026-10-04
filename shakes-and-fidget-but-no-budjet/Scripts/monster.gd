@@ -6,6 +6,8 @@ class_name Monster
 
 @onready var sprite: AnimatedSprite2D = $sprite
 @onready var anim_player: AnimationPlayer = $sprite/AnimationPlayer
+@onready var button: TextureButton = $Button
+
 
 var sound: AudioStream
 var damage
@@ -14,7 +16,6 @@ var resistance
 var special_ability
 var loot
 var monster_name
-
 
 
 var present_names : Array[String]
@@ -29,6 +30,8 @@ func set_present_animation_list() -> void:
 	for anim in animations:
 		if anim.ends_with("Present"):
 			present_names.append(anim)
+
+
 func set_monster_name():
 	monster_name = present_names.pick_random().split("_").get(0)
 	print(monster_name)
@@ -36,7 +39,7 @@ func set_monster_name():
 
 func _on_sprite_animation_finished() -> void:
 	sprite.play(monster_name + "_Idle")
-	pass # Replace with function body.
+	button.disabled = false
 
 
 func _on_button_mouse_entered() -> void:
