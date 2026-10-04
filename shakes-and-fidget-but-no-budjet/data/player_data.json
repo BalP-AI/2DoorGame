@@ -1,0 +1,15 @@
+{
+"totalHealth": 100,
+"currentHealth": 100,
+"level": 1,
+"expToLevel": 100,
+"curExp": 0,
+"armor": 5,
+"gold": 50,
+"speed": 150,
+"atk": 10,
+"def": 5,
+"status": 0,
+"healing_fact": 1.0,
+"sprite": "res://Graphics/Player_HUD/Player_Placeholder_Pic.png"
+}

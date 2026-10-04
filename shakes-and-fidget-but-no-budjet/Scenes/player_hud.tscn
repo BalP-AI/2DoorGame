@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://bu7nc6c2t0wm4"]
 
 [ext_resource type="Texture2D" uid="uid://cfol5v1rj0tl2" path="res://Graphics/Player_HUD/inventory_UI.png" id="1_iori6"]
-[ext_resource type="Texture2D" uid="uid://cs1bsktwdoqw0" path="res://Graphics/Player_HUD/inventory_slots_UI.png" id="1_pk5j4"]
 [ext_resource type="Script" uid="uid://bljm5tn1aqlh4" path="res://Scripts/player_hud.gd" id="1_pkmr8"]
 [ext_resource type="Texture2D" uid="uid://yak6u8sfdmcj" path="res://icon.svg" id="3_uc0x4"]
 
-[node name="Player_HUD" type="Control" unique_id=1686026040]
+[node name="PlayerHud" type="Control" unique_id=1686026040]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -122,13 +121,12 @@ texture = ExtResource("3_uc0x4")
 [node name="Player_Icon" type="NinePatchRect" parent="MarginContainer/HBoxContainer" unique_id=1206505834]
 layout_mode = 2
 size_flags_horizontal = 3
-texture = ExtResource("1_pk5j4")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
 patch_margin_bottom = 16
 
-[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/Player_Icon" unique_id=901116772]
+[node name="Player_Image" type="TextureRect" parent="MarginContainer/HBoxContainer/Player_Icon" unique_id=901116772]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -139,7 +137,8 @@ offset_bottom = 128.0
 grow_horizontal = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_uc0x4")
-stretch_mode = 3
+expand_mode = 1
+stretch_mode = 4
 
 [node name="Invenotry_Bag" type="NinePatchRect" parent="MarginContainer/HBoxContainer" unique_id=898279306]
 layout_mode = 2

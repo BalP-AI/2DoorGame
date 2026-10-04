@@ -45,7 +45,7 @@ func chooseEntityTypeAndInit(roomType : String) -> void:
 			init_Monster(mon)
 	pass
 
-	
+
 func init_Monster(entity : Monster) -> void:
 	entity.position = Vector2(500,500)
 	

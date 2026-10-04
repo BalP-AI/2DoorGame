@@ -5,7 +5,6 @@ extends Control
 @onready var options: TextureButton = $MarginContainer/VBox/options
 @onready var exit: TextureButton = $MarginContainer/VBox/exit
 @onready var about_info: ColorRect = $about_info
-const HUB_WORLD = preload("uid://bgdylqavqucks")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

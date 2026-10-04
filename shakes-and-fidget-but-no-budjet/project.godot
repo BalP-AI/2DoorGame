@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+GlobalPlayer="*uid://b4gd5r7k4yaaa"
 GlobalDoorPicker="*uid://bh2q6uc6o23bj"
 
 [display]

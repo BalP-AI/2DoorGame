@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d0ml78kind4nr"]
+
+[ext_resource type="Script" uid="uid://b4gd5r7k4yaaa" path="res://Global_Scripts/Global_Player.gd" id="1_kyqiw"]
+
+[node name="GlobalPlayer" type="Node2D" unique_id=720853769]
+script = ExtResource("1_kyqiw")
+metadata/_custom_type_script = "uid://c27vtrvkli53t"
