@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GlobalPlayer="*uid://b4gd5r7k4yaaa"
 GlobalDoorPicker="*uid://bh2q6uc6o23bj"
+PlayerHud="*uid://bu7nc6c2t0wm4"
 
 [display]
 
