@@ -3,10 +3,7 @@
 [ext_resource type="Script" uid="uid://5afaxrg4x2ls" path="res://Scripts/hub_world.gd" id="1_8cfjd"]
 [ext_resource type="Texture2D" uid="uid://03txu58gfg3v" path="res://Graphics/Doors/Monster/Type_1/closed.png" id="1_8iuqn"]
 [ext_resource type="Texture2D" uid="uid://wq6p3absnm1t" path="res://Graphics/Doors/Monster/Type_1/hover.png" id="2_8cfjd"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_txkyo"]
-font_size = 36
-font_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://bu7nc6c2t0wm4" path="res://Scenes/player_hud.tscn" id="4_patag"]
 
 [node name="HUB_WORLD" type="Control" unique_id=1006890547]
 layout_mode = 3
@@ -43,13 +40,7 @@ size_flags_vertical = 8
 texture_normal = ExtResource("1_8iuqn")
 texture_hover = ExtResource("2_8cfjd")
 
-[node name="Label" type="Label" parent="." unique_id=415960588]
-layout_mode = 0
-offset_left = 290.0
-offset_top = 41.0
-offset_right = 923.0
-offset_bottom = 91.0
-text = "READY TO GET INTO THE DUNGEON?"
-label_settings = SubResource("LabelSettings_txkyo")
+[node name="PlayerHud" parent="." unique_id=1686026040 instance=ExtResource("4_patag")]
+layout_mode = 1
 
 [connection signal="pressed" from="MarginContainer/dungeon" to="." method="_on_dungeon_pressed"]

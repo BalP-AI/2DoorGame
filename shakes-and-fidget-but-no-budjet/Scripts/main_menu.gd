@@ -29,6 +29,4 @@ func _on_exit_about_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().root.get_node("/root/PlayerHud").z_index = 5
 	get_tree().change_scene_to_file("res://Scenes/hub_world.tscn")
-	
