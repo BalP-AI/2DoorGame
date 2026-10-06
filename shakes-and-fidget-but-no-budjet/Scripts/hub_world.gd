@@ -3,6 +3,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SceneHandler.spawn_player_hud("Hub_World")
 	pass
 
 
@@ -11,4 +12,4 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_dungeon_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/pick_a_door.tscn")
+	SceneHandler.switch_to_pick_a_door()

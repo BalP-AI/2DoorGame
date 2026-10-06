@@ -7,6 +7,7 @@ const MONSTER = preload("uid://cc6j7fj4q8jlj")
 var mon = MONSTER.instantiate()
 
 func _ready() -> void:
+	SceneHandler.spawn_player_hud("Event")
 	color_rect.color = choose_BackGround_Color(GlobalDoorPicker.getSelectedDoorType())
 	chooseEntityTypeAndInit(GlobalDoorPicker.getSelectedDoorType())
 	pass

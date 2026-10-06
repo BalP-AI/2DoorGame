@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cfol5v1rj0tl2" path="res://Graphics/Player_HUD/inventory_UI.png" id="1_iori6"]
 [ext_resource type="Script" uid="uid://bljm5tn1aqlh4" path="res://Scripts/player_hud.gd" id="1_pkmr8"]
 [ext_resource type="Texture2D" uid="uid://yak6u8sfdmcj" path="res://icon.svg" id="3_uc0x4"]
+[ext_resource type="Texture2D" uid="uid://cs1bsktwdoqw0" path="res://Graphics/Player_HUD/inventory_slots_UI.png" id="4_uc0x4"]
 
 [node name="PlayerHud" type="Control" unique_id=1686026040]
 layout_mode = 3
@@ -11,19 +12,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+mouse_filter = 2
 script = ExtResource("1_pkmr8")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=651186360]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = -1
+anchor_left = 0.30400002
+anchor_top = 0.80300003
+anchor_right = 0.69600004
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 350
-theme_override_constants/margin_top = 520
-theme_override_constants/margin_right = 350
-theme_override_constants/margin_bottom = 20
+offset_left = -1.2080078
+offset_top = -29.343994
+offset_right = -0.7920532
+offset_bottom = -29.0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=814538951]
 layout_mode = 2
@@ -121,6 +125,7 @@ texture = ExtResource("3_uc0x4")
 [node name="Player_Icon" type="NinePatchRect" parent="MarginContainer/HBoxContainer" unique_id=1206505834]
 layout_mode = 2
 size_flags_horizontal = 3
+texture = ExtResource("4_uc0x4")
 patch_margin_left = 16
 patch_margin_top = 16
 patch_margin_right = 16
@@ -128,13 +133,15 @@ patch_margin_bottom = 16
 
 [node name="Player_Image" type="TextureRect" parent="MarginContainer/HBoxContainer/Player_Icon" unique_id=901116772]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -53.5
-offset_right = 74.5
-offset_bottom = 128.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.999998
+offset_top = 11.999999
+offset_right = 17.0
+offset_bottom = 12.0
 grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_uc0x4")
 expand_mode = 1
@@ -150,9 +157,10 @@ patch_margin_right = 16
 patch_margin_bottom = 16
 
 [node name="Inventory_List" type="ItemList" parent="MarginContainer/HBoxContainer/Invenotry_Bag" unique_id=279912357]
-layout_mode = 0
-offset_right = 138.0
-offset_bottom = 108.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scroll_hint_mode = 1

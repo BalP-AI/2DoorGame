@@ -5,6 +5,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SceneHandler.spawn_player_hud("pick_a_door")
 	print("New Doors Spawned")
 	_spawn_doors()
 	
@@ -51,11 +52,12 @@ func _debug_print_doors(t1: String, t2: String, p1: String, p2: String) -> void:
 func _on_door_1_pressed() -> void:
 	GlobalDoorPicker.door_1_select = true
 	GlobalDoorPicker.door_2_select = false
+	to_event()
 
-	get_tree().change_scene_to_file("res://Scenes/event.tscn")
-	
 func _on_door_2_pressed() -> void:
 	GlobalDoorPicker.door_1_select = false
 	GlobalDoorPicker.door_2_select = true
-	 
-	get_tree().change_scene_to_file("res://Scenes/event.tscn")
+	to_event()
+
+func to_event():
+	SceneHandler.switch_to_event()

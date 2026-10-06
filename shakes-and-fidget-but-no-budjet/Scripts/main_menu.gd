@@ -1,5 +1,6 @@
 extends Control
 
+
 @onready var start: TextureButton = $MarginContainer/VBox/start
 @onready var about: TextureButton = $MarginContainer/VBox/about
 @onready var options: TextureButton = $MarginContainer/VBox/options
@@ -29,4 +30,6 @@ func _on_exit_about_pressed() -> void:
 
 
 func _on_start_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/hub_world.tscn")
+	#get_tree().root.get_node("/root/PlayerHud").z_index = 5
+	SceneHandler.switch_to_hub_world()
+	
