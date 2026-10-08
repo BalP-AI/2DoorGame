@@ -1,5 +1,9 @@
 extends Control
 
+
+@export var Player_Stats: Resource
+
+
 @onready var margin: MarginContainer = $MarginContainer
 @onready var player_image: TextureRect = $MarginContainer/HBoxContainer/Player_Icon/Player_Image
 
@@ -15,3 +19,7 @@ func _on_check_button_pressed() -> void:
 
 func set_player_portait(image : String) -> void:
 	player_image.texture = load(image)
+
+
+func load_player_stats():
+	pass

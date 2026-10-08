@@ -60,4 +60,4 @@ func _on_door_2_pressed() -> void:
 	to_event()
 
 func to_event():
-	SceneHandler.switch_to_event()
+	SceneHandler.switch_to_scene("pick_a_door")

@@ -48,7 +48,7 @@ func chooseEntityTypeAndInit(roomType : String) -> void:
 
 
 func init_Monster(entity : Monster) -> void:
-	entity.position = Vector2(500,500)
+	entity.position = Vector2(500,450)
 	
 func _on_texture_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/pick_a_door.tscn")
+	SceneHandler.switch_to_scene("event")

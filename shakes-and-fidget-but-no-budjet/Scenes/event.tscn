@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bn4y10hlqbnsv" path="res://Scripts/event.gd" id="1_dww88"]
 [ext_resource type="Texture2D" uid="uid://03txu58gfg3v" path="res://Graphics/Doors/Monster/Type_1/closed.png" id="2_27o3k"]
+[ext_resource type="Texture2D" uid="uid://wq6p3absnm1t" path="res://Graphics/Doors/Monster/Type_1/hover.png" id="3_u37vb"]
 
 [node name="Event" type="Control" unique_id=794861131]
 layout_mode = 3
@@ -34,5 +35,6 @@ offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
 texture_normal = ExtResource("2_27o3k")
+texture_hover = ExtResource("3_u37vb")
 
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

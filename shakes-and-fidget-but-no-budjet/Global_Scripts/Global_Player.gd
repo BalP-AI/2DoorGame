@@ -15,6 +15,7 @@ var def: int = 0
 var status: int = 0
 var healing_fact: float = 1.0
 
+
 var weapon: Item_Class
 var chessplate: Item_Class
 var headgear: Item_Class
@@ -39,7 +40,7 @@ func init_player() -> void:
 	if data.is_empty():
 		push_error("Player initialization failed: no valid player data.")
 		return
-
+#oi times ton metavliton orizontai apo to json, ean den uparxei sto json, tote tha paroun ta default
 	totalHealth = int(data.get("totalHealth", 100))
 	currentHealth = int(data.get("currentHealth", totalHealth))
 	level = int(data.get("level", 1))
@@ -60,20 +61,20 @@ func init_player() -> void:
 
 
 func load_player_data() -> Dictionary:
-	if not FileAccess.file_exists(PLAYER_DATA_PATH):
+	if not FileAccess.file_exists(PLAYER_DATA_PATH): #ean den uparxei kan to arxeio json
 		push_error("Player JSON file not found: " + PLAYER_DATA_PATH)
 		return {}
 
 	var file = FileAccess.open(PLAYER_DATA_PATH, FileAccess.READ)
 
 	if file == null:
-		push_error("Could not open player JSON file.")
+		push_error("Could not open player JSON file, or file is null.")
 		return {}
 
 	var json_text = file.get_as_text()
-	file.close()
+	file.close() #opote kanoume file stream eite gia READ/WRITE, kalo einai na gientai close()
 
-	var json = JSON.new()
+	var json = JSON.new() #JSON einai class, JASON.new() einai object
 	var error = json.parse(json_text)
 
 	if error != OK:
@@ -85,7 +86,7 @@ func load_player_data() -> Dictionary:
 
 	var data = json.data
 
-	if not data is Dictionary:
+	if not data is Dictionary: #isos einai peritto
 		push_error("Player JSON must contain a JSON object.")
 		return {}
 

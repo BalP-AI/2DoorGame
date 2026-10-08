@@ -12,4 +12,4 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_dungeon_pressed() -> void:
-	SceneHandler.switch_to_pick_a_door()
+	SceneHandler.switch_to_scene("hub_world")
