@@ -1,0 +1,92 @@
+{
+  "weapon": {
+	"item_name": "My first sword",
+	"value": 150,
+	"required_level": 3,
+	"description": "A sturdy iron sword",
+	"texture_path": "res://assets/weapons/sword.png",
+	"damage": 1122,
+	"multiplier": 2.0,
+	"effect": "bleed"
+  },
+  "chessplate": {
+	"item_name": "My first chestplate",
+	"value": 200,
+	"required_level": 5,
+	"description": "Heavy plate mail",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  },
+  "headgear": {
+	"item_name": "My first helmet",
+	"value": 200,
+	"required_level": 5,
+	"description": "Heavy helmet",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  },
+  "boots": {
+	"item_name": "My first boots",
+	"value": 150,
+	"required_level": 3,
+	"description": "Sturdy boots",
+	"texture_path": "res://assets/weapons/sword.png",
+	"damage": 12,
+	"multiplier": 2.0,
+	"effect": "bleed"
+  },
+  "ring_1": {
+	"item_name": "My first ring",
+	"value": 200,
+	"required_level": 5,
+	"description": "Magic Ring",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  },
+  "ring_2": {
+	"item_name": "My second ring",
+	"value": 200,
+	"required_level": 5,
+	"description": "Gold Ring",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  },
+  "necklace": {
+	"item_name": "My first necklace",
+	"value": 150,
+	"required_level": 3,
+	"description": "Silver Necklace",
+	"texture_path": "res://assets/weapons/sword.png",
+	"damage": 12,
+	"multiplier": 2.0,
+	"effect": "bleed"
+  },
+  "pants": {
+	"item_name": "My first pants",
+	"value": 200,
+	"required_level": 5,
+	"description": "Leather pants",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  },
+  "lucky_item": {
+	"item_name": "My first lucky item",
+	"value": 200,
+	"required_level": 5,
+	"description": "Logictech Sandwich",
+	"texture_path": "res://assets/armor/plate.png",
+	"armor": 15,
+	"multiplier": 1.0,
+	"effect": "thorns"
+  }
+}

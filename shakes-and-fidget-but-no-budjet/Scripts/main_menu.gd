@@ -2,8 +2,8 @@ extends Control
 
 
 @onready var start: TextureButton = $MarginContainer/VBox/start
-@onready var about: TextureButton = $MarginContainer/VBox/about
-@onready var options: TextureButton = $MarginContainer/VBox/options
+@onready var about: TextureButton = $MarginContainer/VBox/HBoxContainer/about
+@onready var options: TextureButton = $MarginContainer/VBox/HBoxContainer/options
 @onready var exit: TextureButton = $MarginContainer/VBox/exit
 @onready var about_info: ColorRect = $about_info
 

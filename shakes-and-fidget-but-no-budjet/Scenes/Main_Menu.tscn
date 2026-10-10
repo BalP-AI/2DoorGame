@@ -2,6 +2,12 @@
 
 [ext_resource type="Texture2D" uid="uid://yak6u8sfdmcj" path="res://icon.svg" id="1_c4tk2"]
 [ext_resource type="Script" uid="uid://imdwfep2d1xg" path="res://Scripts/main_menu.gd" id="1_rmbjf"]
+[ext_resource type="Texture2D" uid="uid://cswh7vjcp162k" path="res://Graphics/Start_Menu/Start_Button.png" id="2_vnflv"]
+[ext_resource type="Texture2D" uid="uid://dkjxu55qctjhn" path="res://Graphics/Start_Menu/Start_Button_Hover.png" id="3_ymwpv"]
+[ext_resource type="Texture2D" uid="uid://cc4wsd8icdlky" path="res://Graphics/Start_Menu/About.png" id="4_1o627"]
+[ext_resource type="Texture2D" uid="uid://4ftbipnwyy18" path="res://Graphics/Start_Menu/Option_Menu.png" id="5_2ey7y"]
+[ext_resource type="Texture2D" uid="uid://c818kt4aqv0cd" path="res://Graphics/Start_Menu/Exit_Door.png" id="6_u8ev7"]
+[ext_resource type="Texture2D" uid="uid://08qa6ap63c5b" path="res://Graphics/Start_Menu/Exit_Door_Hover.png" id="7_0ul3f"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_txkyo"]
 font_size = 72
@@ -39,6 +45,10 @@ theme_override_constants/margin_bottom = 20
 
 [node name="VBox" type="VBoxContainer" parent="MarginContainer" unique_id=644905143]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 35
+alignment = 1
 
 [node name="title" type="Label" parent="MarginContainer/VBox" unique_id=559271441]
 layout_mode = 2
@@ -46,20 +56,45 @@ text = "2DOOR DUNGEON"
 label_settings = SubResource("LabelSettings_txkyo")
 
 [node name="start" type="TextureButton" parent="MarginContainer/VBox" unique_id=628028990]
+custom_maximum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("1_c4tk2")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_vnflv")
+texture_hover = ExtResource("3_ymwpv")
+stretch_mode = 0
 
-[node name="about" type="TextureButton" parent="MarginContainer/VBox" unique_id=1915843323]
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBox" unique_id=244878604]
 layout_mode = 2
-texture_normal = ExtResource("1_c4tk2")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 350
+alignment = 1
 
-[node name="options" type="TextureButton" parent="MarginContainer/VBox" unique_id=1441746283]
+[node name="about" type="TextureButton" parent="MarginContainer/VBox/HBoxContainer" unique_id=1915843323]
+custom_maximum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("1_c4tk2")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("4_1o627")
+stretch_mode = 0
+
+[node name="options" type="TextureButton" parent="MarginContainer/VBox/HBoxContainer" unique_id=1441746283]
+custom_maximum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_2ey7y")
+stretch_mode = 0
 
 [node name="exit" type="TextureButton" parent="MarginContainer/VBox" unique_id=1267333592]
+custom_maximum_size = Vector2(128, 128)
 layout_mode = 2
-texture_normal = ExtResource("1_c4tk2")
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("6_u8ev7")
+texture_hover = ExtResource("7_0ul3f")
+stretch_mode = 0
 
 [node name="about_info" type="ColorRect" parent="." unique_id=283878435]
 visible = false
@@ -92,6 +127,6 @@ size_flags_vertical = 0
 texture_normal = ExtResource("1_c4tk2")
 
 [connection signal="pressed" from="MarginContainer/VBox/start" to="." method="_on_start_pressed"]
-[connection signal="pressed" from="MarginContainer/VBox/about" to="." method="_on_about_pressed"]
+[connection signal="pressed" from="MarginContainer/VBox/HBoxContainer/about" to="." method="_on_about_pressed"]
 [connection signal="pressed" from="MarginContainer/VBox/exit" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="about_info/MarginContainer/exit_about" to="." method="_on_exit_about_pressed"]
